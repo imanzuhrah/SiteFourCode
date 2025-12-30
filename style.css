@@ -327,3 +327,7 @@ footer {
         width: 100%;
     }
 }
+
+section {
+    scroll-margin-top: 120px;
+}
