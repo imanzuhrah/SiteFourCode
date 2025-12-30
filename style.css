@@ -546,4 +546,42 @@ form button:hover {
     }
 }
 
+/* ===== FIX OVERLAY MENU MOBILE ===== */
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav.menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background: rgba(2, 4, 10, 0.98);
+        backdrop-filter: blur(12px);
+
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+
+        z-index: 9999;
+    }
+
+    nav.menu.active {
+        display: flex;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
 
