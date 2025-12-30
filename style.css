@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ===============================
-   RESET
-================================ */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -17,11 +15,11 @@ html {
 body {
     background: radial-gradient(circle at top, #0b1a2f, #05070c);
     color: #ffffff;
-    padding-top: 90px;
+    padding-top: 90px; /* compensação do header fixo */
 }
 
 /* ===============================
-   HEADER
+   HEADER FIXO
 ================================ */
 header {
     position: fixed;
@@ -37,6 +35,7 @@ header {
     padding: 0 32px;
     background: rgba(2, 4, 10, 0.92);
     backdrop-filter: blur(10px);
+
     z-index: 1000;
 }
 
@@ -63,33 +62,23 @@ nav.menu a:hover {
 }
 
 /* ===============================
-   BOTÃO HAMBÚRGUER
+   BOTÃO HAMBURGUER
 ================================ */
 .menu-toggle {
     display: none;
-    width: 32px;
-    height: 24px;
-    position: relative;
-
+    flex-direction: column;
+    gap: 6px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 2001;
 }
 
 .menu-toggle span {
-    position: absolute;
-    left: 0;
-    width: 100%;
+    width: 28px;
     height: 3px;
     background: #ffffff;
     border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
 }
-
-.menu-toggle span:nth-child(1) { top: 0; }
-.menu-toggle span:nth-child(2) { top: 10px; }
-.menu-toggle span:nth-child(3) { top: 20px; }
 
 /* ===============================
    HERO
@@ -239,12 +228,13 @@ footer {
 }
 
 /* ===============================
-   MENU MOBILE
+   MENU MOBILE OVERLAY
 ================================ */
 @media (max-width: 768px) {
 
     .menu-toggle {
-        display: block;
+        display: flex;
+        z-index: 2001;
     }
 
     nav.menu {
@@ -259,6 +249,7 @@ footer {
 
         transform: translateX(100%);
         transition: transform 0.3s ease;
+
         z-index: 2000;
     }
 
@@ -279,12 +270,22 @@ footer {
     }
 }
 
+/* Ajuste scroll para âncoras */
+section {
+    scroll-margin-top: 110px;
+}
+
 /* ===============================
-   HAMBÚRGUER → X
+   ANIMAÇÃO HAMBÚRGUER → X
 ================================ */
+
+.menu-toggle span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Quando menu estiver ativo */
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 10px;
+    transform: translateY(9px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -292,13 +293,5 @@ footer {
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 10px;
-}
-
-/* ===============================
-   AJUSTE ÂNCORAS
-================================ */
-section {
-    scroll-margin-top: 110px;
+    transform: translateY(-9px) rotate(-45deg);
 }
