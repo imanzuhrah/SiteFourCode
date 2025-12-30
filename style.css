@@ -8,52 +8,36 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background: radial-gradient(circle at top, #0b1a2f, #05070c);
     color: #ffffff;
-    padding-top: 90px; /* compensação do header fixo */
 }
 
 /* ===============================
-   HEADER FIXO
+   HEADER
 ================================ */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
+    position: relative;
+    z-index: 1000;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 22px 70px;
 
-    padding: 0 32px;
-    background: rgba(2, 4, 10, 0.92);
-    backdrop-filter: blur(10px);
-
-    z-index: 1000;
+    background: rgba(2, 4, 10, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.logo img {
-    height: 70px;
-}
-
-/* ===============================
-   MENU DESKTOP
-================================ */
-nav.menu {
-    display: flex;
-    gap: 30px;
+header img {
+    height: 100px;
 }
 
 nav.menu a {
     color: #ffffff;
     text-decoration: none;
+    margin-left: 30px;
     font-weight: 500;
 }
 
@@ -62,7 +46,7 @@ nav.menu a:hover {
 }
 
 /* ===============================
-   BOTÃO HAMBURGUER
+   MENU HAMBÚRGUER
 ================================ */
 .menu-toggle {
     display: none;
@@ -71,13 +55,14 @@ nav.menu a:hover {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 10001;
 }
 
 .menu-toggle span {
     width: 28px;
     height: 3px;
     background: #ffffff;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 /* ===============================
@@ -128,6 +113,10 @@ nav.menu a:hover {
     text-align: center;
 }
 
+.servicos h2 {
+    margin-bottom: 40px;
+}
+
 .cards {
     display: flex;
     justify-content: center;
@@ -144,12 +133,17 @@ nav.menu a:hover {
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
 .card h3 {
     color: #00b3ff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #9fb3c8;
 }
 
 /* ===============================
@@ -160,15 +154,20 @@ nav.menu a:hover {
     text-align: center;
 }
 
+.sobre h2 {
+    margin-bottom: 25px;
+}
+
 .sobre p {
     color: #9fb3c8;
     max-width: 900px;
     margin: auto;
+    font-size: 17px;
     line-height: 1.8;
 }
 
 /* ===============================
-   FORMULÁRIO
+   FORM
 ================================ */
 form {
     max-width: 520px;
@@ -178,22 +177,37 @@ form {
     gap: 18px;
 
     background: linear-gradient(180deg, #0c1220, #060b18);
-    padding: 40px;
+    padding: 40px 35px;
     border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
 }
 
 form input,
 form textarea {
-    background: #05070c;
-    color: #fff;
-    padding: 16px;
+    background-color: #05070c;
+    color: #ffffff;
+    padding: 16px 18px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 15px;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #00b3ff;
+    box-shadow: 0 0 0 3px rgba(0,179,255,0.2);
+}
+
+form textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
 form button {
     background: linear-gradient(135deg, #00b3ff, #007bff);
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 16px;
     border-radius: 40px;
@@ -218,51 +232,76 @@ footer {
     position: fixed;
     bottom: 28px;
     right: 28px;
+
     background: linear-gradient(135deg, #25d366, #1ebe5d);
-    color: #fff;
-    padding: 14px 22px;
-    border-radius: 50px;
+    color: #ffffff;
+
+    padding: 15px 22px;
+    border-radius: 60px;
     text-decoration: none;
     font-weight: 600;
+
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
     z-index: 900;
 }
 
 /* ===============================
-   MENU MOBILE OVERLAY
+   RESPONSIVO + MENU OVERLAY
 ================================ */
 @media (max-width: 768px) {
 
+    header {
+        padding: 18px 25px;
+    }
+
+    header img {
+        height: 70px;
+    }
+
     .menu-toggle {
         display: flex;
-        z-index: 2001;
     }
 
     nav.menu {
         position: fixed;
         inset: 0;
-        background: radial-gradient(circle at top, #0b1a2f, #05070c);
+        background: rgba(2, 4, 10, 0.98);
+        backdrop-filter: blur(12px);
 
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 36px;
+        gap: 32px;
 
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease;
 
-        z-index: 2000;
+        z-index: 10000;
     }
 
     nav.menu.active {
-        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     nav.menu a {
         font-size: 22px;
+        margin: 0;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .hero h1 {
+        font-size: 34px;
     }
 
     .cards {
         flex-direction: column;
+        align-items: center;
     }
 
     .sobre {
@@ -270,28 +309,134 @@ footer {
     }
 }
 
-/* Ajuste scroll para âncoras */
-section {
-    scroll-margin-top: 110px;
+@media (max-width: 480px) {
+
+    header img {
+        height: 60px;
+    }
+
+    .hero {
+        padding: 80px 18px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero button {
+        width: 100%;
+    }
 }
 
-/* ===============================
-   ANIMAÇÃO HAMBÚRGUER → X
-================================ */
+section {
+    scroll-margin-top: 120px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+    background: rgba(2, 4, 10, 0.92);
+    backdrop-filter: blur(10px);
+
+    z-index: 9999;
+}
+
+/* LOGO */
+.logo img {
+    height: 70px;
+}
+
+/* MENU DESKTOP */
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: #00b3ff;
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
 
 .menu-toggle span {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 28px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
 }
 
-/* Quando menu estiver ativo */
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: radial-gradient(circle at top, #0b1a2f, #05070c);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 35px;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        z-index: 9998;
+    }
+
+    .menu a {
+        font-size: 22px;
+    }
+
+    .menu.active {
+        transform: translateX(0);
+    }
 }
 
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+/* COMPENSA HEADER FIXO */
+body {
+    padding-top: 90px;
 }
 
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+section {
+    scroll-margin-top: 100px;
 }
