@@ -494,4 +494,56 @@ form button:hover {
     }
 }
 
+/* MENU HAMBÚRGUER */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav.menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(2, 4, 10, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+    }
+
+    nav.menu a {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    nav.menu.active {
+        right: 0;
+    }
+}
+
 
