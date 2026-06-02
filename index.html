@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon4Code.png">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <div class="logo">
-        <img src="images/logo4code2.png" alt="Four Code">
+        <img src="images/logo4code.jpeg" alt="Four Code">
     </div>
 
     <button class="menu-toggle" aria-label="Abrir menu">
@@ -35,11 +31,34 @@
 </header>
 
 <section class="hero fade-up" id="inicio">
-    <h1>Innovate. Create. Develop.</h1>
-    <p>Soluções em software sob medida para empresas que querem crescer.</p>
-    <button onclick="window.open('https://wa.me/5599999999999','_blank')">
-        Solicitar orçamento
-    </button>
+    <div>
+        <img class="hero-logo" src="images/logo4code.jpeg" alt="Four Code">
+        <h1>Innovate. Create. Develop.</h1>
+        <p>Soluções em software sob medida para empresas que querem crescer.</p>
+        <button onclick="window.open('https://wa.me/5514991725630','_blank')">
+            Solicitar orçamento
+        </button>
+    </div>
+</section>
+
+<section class="ai-promo fade-up" aria-label="Sistema com chatbot IA da Four Code">
+    <div class="ai-promo-inner">
+        <div class="ai-promo-copy">
+            <span class="promo-badge">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Sistema Four Code com IA
+            </span>
+            <h2>Chatbot inteligente para atender, vender e organizar seu negócio</h2>
+            <p>
+                Automatize conversas no WhatsApp, acompanhe clientes, agilize vendas e centralize sua operação em uma plataforma feita para empresas que querem crescer com tecnologia.
+            </p>
+        </div>
+
+        <a class="promo-cta" href="https://4codesystems.com/" target="_blank" rel="noopener">
+            Conhecer sistema
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
 </section>
 
 <section class="servicos fade-up" id="servicos">
@@ -47,62 +66,94 @@
 
     <div class="cards">
         <div class="card">
-            <h3>Desenvolvimento Web</h3>
-            <p>Sistemas, sites e plataformas modernas e escaláveis.</p>
+            <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>Chatbot com IA</h3>
+            <p>Atendimento automatizado para WhatsApp, com respostas inteligentes e operação disponível 24 horas.</p>
         </div>
 
         <div class="card">
-            <h3>Aplicativos Mobile</h3>
-            <p>Apps Android e iOS com foco em usabilidade.</p>
+            <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <h3>Gestão de Clientes</h3>
+            <p>CRM para organizar leads, histórico de conversas, contatos e oportunidades comerciais.</p>
         </div>
 
         <div class="card">
-            <h3>Sistemas Corporativos</h3>
-            <p>Automação e gestão para empresas.</p>
+            <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Dashboard Inteligente</h3>
+            <p>Painéis com métricas, indicadores e visão clara do desempenho do negócio em tempo real.</p>
+        </div>
+
+        <div class="card">
+            <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h3>Controle de Estoque</h3>
+            <p>Gerenciamento de produtos, fornecedores e alertas para manter sua operação sempre abastecida.</p>
+        </div>
+
+        <div class="card">
+            <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Agendamentos</h3>
+            <p>Agenda digital com organização de horários e lembretes automáticos para seus clientes.</p>
+        </div>
+
+        <div class="card">
+            <div class="service-icon"><i class="fa-solid fa-cash-register"></i></div>
+            <h3>Vendas e PDV</h3>
+            <p>Registro de vendas, controle de caixa e acompanhamento do faturamento de forma simples.</p>
         </div>
     </div>
 </section>
 
 <section class="sobre fade-up" id="sobre">
     <h2>Sobre a Four Code</h2>
-    <p>
-        A <strong> Four Code - Softwares e Automações </strong> desenvolve softwares e automações inteligentes para empresas que buscam eficiência, crescimento e inovação. Criamos soluções digitais sob medida, seguras e escaláveis, focadas em otimizar processos e gerar resultados reais para o seu negócio.
-    </p>
+
+    <div class="about-summary">
+        <p>
+            A <strong>Four Code - Softwares e Automações LTDA</strong> desenvolve sistemas personalizados, automações inteligentes e soluções tecnológicas para a transformação digital de empresas e instituições.
+        </p>
+        <p>
+            Criamos ferramentas seguras, eficientes e escaláveis para simplificar processos, aumentar a produtividade e gerar resultados reais para cada negócio.
+        </p>
+        <a class="about-link" href="sobre.html">
+            Saiba mais
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
 </section>
 
 <section class="sobre fade-up">
     <h2>Fale Conosco</h2>
+    <p class="section-lead">Escolha o canal ideal para falar com a Four Code.</p>
 
-    <form 
-      action="https://formsubmit.co/four4code4@gmail.com" 
-      method="POST">
+    <div class="contact-grid">
+        <a href="https://wa.me/5514991725630" target="_blank" class="contact-card" aria-label="Fale conosco pelo WhatsApp">
+            <div class="contact-icon whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>+55 14 99172-5630</p>
+        </a>
 
-        <input type="hidden" name="_subject" value="Contato pelo site Four Code">
-        <input type="hidden" name="_captcha" value="false">
+        <a href="mailto:4codeilimitad@gmail.com" class="contact-card" aria-label="Envie um email para a Four Code">
+            <div class="contact-icon email">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>4codeilimitad@gmail.com</p>
+        </a>
 
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu email" required>
-        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-
-        <button type="submit">Enviar mensagem</button>
-    </form>
+        <a href="https://instagram.com/4fourcode" target="_blank" class="contact-card" aria-label="Acesse nosso Instagram">
+            <div class="contact-icon instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h3>Instagram</h3>
+            <p>@4fourcode</p>
+        </a>
+    </div>
 </section>
 
 <footer id="contato">
-    <p>© 2025 Four Code — Todos os direitos reservados</p>
+    <p>© 2026 Four Code — Todos os direitos reservados</p>
 </footer>
-
-<!-- BOTÃO WHATSAPP FLUTUANTE -->
-<a 
-  href="https://wa.me/5599999999999"
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Fale conosco no WhatsApp">
-  
-  <i class="fa-brands fa-whatsapp"></i>
-  WhatsApp
-</a>
-
 
 <script src="script.js"></script>
 
